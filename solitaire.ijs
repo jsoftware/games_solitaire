@@ -12,9 +12,7 @@ wd 'psel about'
 wd 'setxywhx aboutpic 20 14 ',": cardWH
 wd 'pshow;'
 glsel 'aboutpic'
-glpixels 0 0, cardWH, ,3 { CARDS
 wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
-glpaint''
 )
 about_close=: 3 : 0
 wd 'psel about'
@@ -22,6 +20,11 @@ wd'pclose'
 )
 about_ok_button=: 3 : 0
 about_close''
+)
+
+about_aboutpic_paint=: 3 : 0
+glpixels 0 0, cardWH, ,3 { CARDS
+0
 )
 OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
@@ -229,7 +232,7 @@ WaitTilWon=: y
 drawinit=: 3 : 0
 glcmds DRAWINIT
 )
-draw=: 3 : 0
+draw1=: 3 : 0
 drawinit''
 if. 1 < # decktable do.
   glpixels ((cardOVER, cardDOWN), cardWH), CB
@@ -259,12 +262,11 @@ end.
 
 drawcolumn i.7
 drawdragstack''
-glpaint ''
-
 if. CheckIfWon acetable do.
   acetable=: '' ; '' ; '' ; ''
   draw''
 end.
+''
 )
 drawcolumn=: 3 : 0 "0
 s=. >y{columntable
@@ -597,7 +599,8 @@ wd 'pshow ;'
 draw''
 )
 
-solitaire_game_paint=: draw
+draw=: glpaint@draw1
+solitaire_game_paint=: draw1
 
 solitaire_close=: 3 : 0
 wd'pclose'

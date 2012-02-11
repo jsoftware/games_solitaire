@@ -25,8 +25,9 @@ NB. wd 'psel solitaire'
 glcmds DRAWINIT
 )
 
+NB. make sure no glpaint inside draw1 because it is called by paint event
 NB. This function draws the deck, fliptable and aces and calls on drawcolumn and drawdragstack
-draw=: 3 : 0
+draw1=: 3 : 0
 drawinit''
 if. 1 < # decktable do. NB. try lesser of #decktable and 2
   glpixels ((cardOVER, cardDOWN), cardWH), CB
@@ -56,12 +57,13 @@ end.
 
 drawcolumn i.7
 drawdragstack'' NB. draw DRAGSTACK at DRAGPOS
-glpaint ''
+NB. glpaint ''
 
 if. CheckIfWon acetable do.  NB. everytime the board is drawn the script checks to see if you have won
   acetable=: '' ; '' ; '' ; ''
   draw''
 end.
+''
 )
 
 NB. draw column
@@ -445,7 +447,8 @@ wd 'pshow ;'
 draw''
 )
 
-solitaire_game_paint=: draw
+draw=: glpaint@draw1
+solitaire_game_paint=: draw1
 
 solitaire_close=: 3 : 0
 wd'pclose'
