@@ -445,6 +445,7 @@ NB. (((cardOVER + 3 * cardSPACE), cardDOWN) + b * cardSPACE, 0 )
 deal 52?52 NB. deals a random deck
 wd 'pshow ;'
 draw''
+wdloop^:(-.IFJ6)''
 )
 
 draw=: glpaint@draw1

@@ -597,6 +597,7 @@ DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 
 deal 52?52
 wd 'pshow ;'
 draw''
+wdloop^:(-.IFJ6)''
 )
 
 draw=: glpaint@draw1
