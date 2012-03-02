@@ -1,3 +1,7 @@
+require 'gtkwd gl2 files strings'
+
+coclass 'solitaire'
+coinsert 'jgl2'
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 xywh 54 60 30 12;cc ok button;cn "OK";
