@@ -232,7 +232,7 @@ WaitTilWon=: y
 drawinit=: 3 : 0
 glcmds DRAWINIT
 )
-draw1=: 3 : 0
+draw=: 3 : 0
 drawinit''
 if. 1 < # decktable do.
   glpixels ((cardOVER, cardDOWN), cardWH), CB
@@ -262,6 +262,8 @@ end.
 
 drawcolumn i.7
 drawdragstack''
+glpaint ''
+
 if. CheckIfWon acetable do.
   acetable=: '' ; '' ; '' ; ''
   draw''
@@ -600,8 +602,7 @@ draw''
 wdloop^:(-.IFJ6)''
 )
 
-draw=: glpaint@draw1
-solitaire_game_paint=: draw1
+solitaire_game_paint=: draw
 
 solitaire_close=: 3 : 0
 wd'pclose'
