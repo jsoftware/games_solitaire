@@ -26,13 +26,14 @@ wd OPTIONS
 NB. initialize form here
 backNUM=: 51 + CARDBACK
 wd 'psel options'
-wd 'pshow;'
+wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint''
 wd 'set numbox ',": NUMFLIP
 wd'set band ',":BAND
 wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
 

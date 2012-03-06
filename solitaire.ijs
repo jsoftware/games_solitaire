@@ -14,9 +14,10 @@ about_run=: 3 : 0
 wd ABOUT
 wd 'psel about'
 wd 'setxywhx aboutpic 20 14 ',": cardWH
-wd 'pshow;'
+wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 glsel 'aboutpic'
 wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
+wd 'pshow;'
 )
 about_close=: 3 : 0
 wd 'psel about'
@@ -50,13 +51,14 @@ options_run=: 3 : 0
 wd OPTIONS
 backNUM=: 51 + CARDBACK
 wd 'psel options'
-wd 'pshow;'
+wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint''
 wd 'set numbox ',": NUMFLIP
 wd'set band ',":BAND
 wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
 options_close=: 3 : 0
@@ -604,8 +606,9 @@ xy=. 2 3{".wd'qscreen'
 DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 4 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 5 * cardSPACE), cardDOWN), cardWH, 6 2031 ,((cardOVER + 6 * cardSPACE), cardDOWN),cardWH
 9!:1 >.*:+/6!:0''
 deal 52?52
-wd 'pshow ;'
+wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 draw''
+wd 'pshow'
 wdloop^:(-.IFJ6)''
 )
 
