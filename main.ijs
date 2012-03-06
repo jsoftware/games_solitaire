@@ -427,7 +427,7 @@ end.
 DOWN=: DRAWDOWN=: 0
 CARDS=: 3!:2 [ 1!:1 <PATH, '/cards.j31'           NB. If cards.j31 changes directory then update here
 if. -.IFJ6 do.
-  if. -.RGBSEQ_jgtk_ do. CARDS=: flip_rgb_jgtk_ CARDS end.
+  if. -.RGBSEQ_j_ do. CARDS=: fliprgb CARDS end.
 end.
 NUMtoFLIP=: NUMFLIP
 cardOVER=: 15
