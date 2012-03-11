@@ -609,7 +609,7 @@ deal 52?52
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 draw''
 wd 'pshow'
-wdloop^:(-.IFJ6)''
+evtloop^:(-.IFJ6)''
 )
 
 solitaire_game_paint=: draw
