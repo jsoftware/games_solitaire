@@ -86,7 +86,7 @@ CARDBACK=: backNUM - 51
 CB=: ,(51+CARDBACK){CARDS
 CBTOP=: (CBTOPN*{.cardWH){.CB
 BGCOLOR=: tempBGCOLOR
-xy=. 2 3{".wd'qscreen'
+xy=. 2 3{wdqscreen''
 DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 4 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 5 * cardSPACE), cardDOWN), cardWH, 6 2031 ,((cardOVER + 6 * cardSPACE), cardDOWN),cardWH
 draw''
 FILE=. (<(": CARDBACK),' ', (": NUMFLIP), ' ' , (": BGCOLOR), ' ', ": BAND), }. 'b' fread PATHRECORD
@@ -602,7 +602,7 @@ CFTOPN=: 25
 CB=: ,(51+CARDBACK){CARDS
 CBTOPN=: 5
 CBTOP=: (CBTOPN*{.cardWH){.CB
-xy=. 2 3{".wd'qscreen'
+xy=. 2 3{wdqscreen''
 DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 4 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 5 * cardSPACE), cardDOWN), cardWH, 6 2031 ,((cardOVER + 6 * cardSPACE), cardDOWN),cardWH
 9!:1 >.*:+/6!:0''
 deal 52?52
