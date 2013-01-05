@@ -20,7 +20,6 @@ wd 'psel about'
 NB. commands to prepare the isigraph to display deck card(ace of spades)
 wd 'setxywhx aboutpic 20 14 ',": cardWH
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
-glsel 'aboutpic'
 wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
@@ -37,6 +36,7 @@ about_close''
 )
 
 about_aboutpic_paint=: 3 : 0
+glsel 'aboutpic'
 glpixels 0 0, cardWH, ,3 { CARDS NB. Display card
 0
 )

@@ -15,7 +15,6 @@ wd ABOUT
 wd 'psel about'
 wd 'setxywhx aboutpic 20 14 ',": cardWH
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
-glsel 'aboutpic'
 wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
@@ -28,6 +27,7 @@ about_close''
 )
 
 about_aboutpic_paint=: 3 : 0
+glsel 'aboutpic'
 glpixels 0 0, cardWH, ,3 { CARDS
 0
 )
@@ -47,17 +47,48 @@ xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
 pas 6 6;pcenter;
 rem form end;
 )
+
+OPTIONSQT=: 0 : 0
+pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
+bin v;
+bin hv;
+xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
+xywh 14 17 36 48;cc back isigraph stretch 1;
+bin szv;
+xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
+xywh 72 18 160 55;cc ccstatic static;
+bin szzh;
+xywh 19 71 24 12;cc next button;
+xywh 141 76 33 12;cc numbox edit;
+bin sz;
+xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
+xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
+xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
+bin hs;
+xywh 129 156 48 12;cc no button;cn "Cancel";
+xywh 183 156 49 12;cc ok button;cn "OK";
+bin zz;
+pas 6 6;pcenter;
+rem form end;
+)
 options_run=: 3 : 0
-wd OPTIONS
+wd IFQT{::OPTIONS;OPTIONSQT
 backNUM=: 51 + CARDBACK
 wd 'psel options'
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
+glsel 'back'
 glclear''
-glpixels 0 0, cardWH, ,backNUM { CARDS
-glpaint''
+if. 0 -.@e. glqwh'' do.
+  glpixels 0 0, cardWH, ,backNUM { CARDS
+  glpaint''
+end.
 wd 'set numbox ',": NUMFLIP
 wd'set band ',":BAND
-wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+if. IFQT do.
+  wd'set ccstatic *Please enter the number'
+else.
+  wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+end.
 wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
@@ -65,10 +96,15 @@ options_close=: 3 : 0
 wd'pclose'
 )
 options_next_button=: 3 : 0
-if. ((backNUM + ".next) < 64) *. (backNUM + ".next) > 51 do.
-  backNUM=: backNUM+ ".next
+if. IFQT do.
+  backNUM=: 52 + ?63-52
+else.
+  if. ((backNUM + ".next) < 64) *. (backNUM + ".next) > 51 do.
+    backNUM=: backNUM+ ".next
+  end.
 end.
 wd 'psel options'
+glsel 'back'
 glclear''
 
 glpixels 0 0, cardWH, ,backNUM { CARDS
