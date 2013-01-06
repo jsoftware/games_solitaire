@@ -27,7 +27,6 @@ about_close''
 )
 
 about_aboutpic_paint=: 3 : 0
-glsel 'aboutpic'
 glpixels 0 0, cardWH, ,3 { CARDS
 0
 )
@@ -53,7 +52,7 @@ pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
 bin v;
 bin hv;
 xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
-xywh 14 17 36 48;cc back isigraph stretch 1;
+xywh 14 17 36 48;cc back isigraph stretch 0;
 bin szv;
 xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
 xywh 72 18 160 55;cc ccstatic static;
@@ -74,21 +73,13 @@ rem form end;
 options_run=: 3 : 0
 wd IFQT{::OPTIONS;OPTIONSQT
 backNUM=: 51 + CARDBACK
-wd 'psel options'
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
-glsel 'back'
 glclear''
-if. 0 -.@e. glqwh'' do.
-  glpixels 0 0, cardWH, ,backNUM { CARDS
-  glpaint''
-end.
+glpixels 0 0, cardWH, ,backNUM { CARDS
+glpaint''
 wd 'set numbox ',": NUMFLIP
 wd'set band ',":BAND
-if. IFQT do.
-  wd'set ccstatic *Please enter the number'
-else.
-  wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
-end.
+wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
 wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
@@ -103,12 +94,16 @@ else.
     backNUM=: backNUM+ ".next
   end.
 end.
-wd 'psel options'
 glsel 'back'
 glclear''
 
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint ''
+)
+
+options_back_paint=: 3 : 0
+glclear''
+glpixels 0 0, cardWH, ,backNUM { CARDS
 )
 options_ok_button=: 3 : 0
 if. (5 >: ". numbox) *. (1<: ". numbox) *. (". numbox) = <. ". numbox do.

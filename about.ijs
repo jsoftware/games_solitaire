@@ -36,7 +36,6 @@ about_close''
 )
 
 about_aboutpic_paint=: 3 : 0
-glsel 'aboutpic'
 glpixels 0 0, cardWH, ,3 { CARDS NB. Display card
 0
 )
