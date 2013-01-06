@@ -2,11 +2,16 @@ require 'gtkwd gl2 files strings'
 
 coclass 'solitaire'
 coinsert 'jgl2'
+
+open=: xedit
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
-xywh 54 60 30 12;cc ok button;cn "OK";
+bin vh;
 xywh 10 7 36 48;cc aboutpic isigraph;
 xywh 54 6 80 50;cc t static;
+bin sz;
+xywh 54 60 30 12;cc ok button;cn "OK";
+bin z;
 pas 6 3;pcenter;
 rem form end;
 )
@@ -49,21 +54,22 @@ rem form end;
 
 OPTIONSQT=: 0 : 0
 pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
-bin v;
-bin hv;
+bin vhv;
 xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
 xywh 14 17 36 48;cc back isigraph stretch 0;
-bin szv;
+bin h;
+xywh 19 71 24 12;cc next button;
+bin szzv;
 xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
 xywh 72 18 160 55;cc ccstatic static;
-bin szzh;
-xywh 19 71 24 12;cc next button;
+bin h;
 xywh 141 76 33 12;cc numbox edit;
-bin sz;
+bin szszz;
 xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
 xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
+bin h;
 xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
-bin hs;
+bin szhs;
 xywh 129 156 48 12;cc no button;cn "Cancel";
 xywh 183 156 49 12;cc ok button;cn "OK";
 bin zz;
@@ -140,12 +146,18 @@ end.
 )
 USED=: 0 : 0
 pc used nomax nomenu nomin nosize owner;pn "Winning Games";
+bin v;
 xywh 10 4 156 41;cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
+bin h;
 xywh 13 48 69 12;cc ccstatic static;cn "Winner's Name";
-xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
-xywh 51 254 92 12;cc play button;cn "Play The Game!";
-xywh 9 254 39 12;cc no button;cn "Cancel";
 xywh 93 48 69 12;cc s2 static ss_right;cn "Wins | Losses";
+bin z;
+xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
+bin h;
+xywh 9 254 39 12;cc no button;cn "Cancel";
+xywh 51 254 92 12;cc play button;cn "Play The Game!";
+bin zz;
+xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
 pas 6 6;pcenter;
 rem form end;
 )
@@ -204,10 +216,12 @@ used_play_button''
 )
 WIN=: 0 : 0
 pc win nomax nomenu nomin nosize owner;pn "Congratulations!";
-xywh 8 60 147 12;cc name edit;
-xywh 8 78 147 11;cc submit button;cn "Submit";
+bin v;
 xywh 8 12 147 10;cc ccstatic static ss_center;cn "Congratulations! You've Won!";
 xywh 20 26 120 32;cc ccstatic static ss_center;cn "Please enter your name below so that you can be immortalized in the Solitaire Hall of Fame";
+xywh 8 60 147 12;cc name edit;
+xywh 8 78 147 11;cc submit button;cn "Submit";
+bin z;
 pas 6 6;pcenter;
 rem form end;
 )

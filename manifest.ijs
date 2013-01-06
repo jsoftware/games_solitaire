@@ -6,7 +6,7 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.12'
+VERSION=: '1.0.13'
 
 RELEASE=: 'j602 j701'
 

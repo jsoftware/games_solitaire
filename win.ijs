@@ -5,10 +5,12 @@ NB. This script is run when a game is won and it records the user's name and the
 NB. Creates the win form
 WIN=: 0 : 0
 pc win nomax nomenu nomin nosize owner;pn "Congratulations!";
-xywh 8 60 147 12;cc name edit;
-xywh 8 78 147 11;cc submit button;cn "Submit";
+bin v;
 xywh 8 12 147 10;cc ccstatic static ss_center;cn "Congratulations! You've Won!";
 xywh 20 26 120 32;cc ccstatic static ss_center;cn "Please enter your name below so that you can be immortalized in the Solitaire Hall of Fame";
+xywh 8 60 147 12;cc name edit;
+xywh 8 78 147 11;cc submit button;cn "Submit";
+bin z;
 pas 6 6;pcenter;
 rem form end;
 )
