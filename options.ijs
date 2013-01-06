@@ -24,8 +24,9 @@ OPTIONSQT=: 0 : 0
 pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
 bin vhv;
 xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
-xywh 14 17 36 48;cc back isigraph stretch 0;
 bin h;
+xywh 14 17 36 48;cc back isigraph;
+bin szsh;
 xywh 19 71 24 12;cc next button;
 bin szzv;
 xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";

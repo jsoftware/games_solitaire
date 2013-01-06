@@ -6,8 +6,9 @@ coinsert 'jgl2'
 open=: xedit
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
-bin vh;
+bin vhv;
 xywh 10 7 36 48;cc aboutpic isigraph;
+bin sz;
 xywh 54 6 80 50;cc t static;
 bin sz;
 xywh 54 60 30 12;cc ok button;cn "OK";
@@ -56,8 +57,9 @@ OPTIONSQT=: 0 : 0
 pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
 bin vhv;
 xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
-xywh 14 17 36 48;cc back isigraph stretch 0;
 bin h;
+xywh 14 17 36 48;cc back isigraph;
+bin szsh;
 xywh 19 71 24 12;cc next button;
 bin szzv;
 xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";

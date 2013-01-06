@@ -5,8 +5,9 @@ NB. This loads the about form.
 NB. Creating the form
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
-bin vh;
+bin vhv;
 xywh 10 7 36 48;cc aboutpic isigraph;
+bin sz;
 xywh 54 6 80 50;cc t static;
 bin sz;
 xywh 54 60 30 12;cc ok button;cn "OK";
