@@ -6,9 +6,9 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.14'
+VERSION=: '1.0.15'
 
-RELEASE=: 'j602 j701'
+RELEASE=: 'j701 j801'
 
 FILES=: 0 : 0
 solitaire.ijs

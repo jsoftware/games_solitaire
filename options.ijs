@@ -51,7 +51,7 @@ options_run=: 3 : 0
 wd IFQT{::OPTIONS;OPTIONSQT
 NB. initialize form here
 backNUM=: 51 + CARDBACK
-wd^:(-.IFJ6) 'pshow;pshow sw_hide'
+wd 'pshow;pshow sw_hide'
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint''

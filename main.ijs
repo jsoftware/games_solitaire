@@ -426,9 +426,7 @@ else.
 end.
 DOWN=: DRAWDOWN=: 0
 CARDS=: 3!:2 [ 1!:1 <PATH, '/cards.j31'           NB. If cards.j31 changes directory then update here
-if. -.IFJ6 do.
-  if. -.RGBSEQ_j_ do. CARDS=: fliprgb CARDS end.
-end.
+if. -.RGBSEQ_j_ do. CARDS=: fliprgb CARDS end.
 NUMtoFLIP=: NUMFLIP
 cardOVER=: 15
 cardDOWN=: 10
@@ -445,10 +443,10 @@ DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 
 NB. (((cardOVER + 3 * cardSPACE), cardDOWN) + b * cardSPACE, 0 )
 9!:1 >.*:+/6!:0'' NB. random seed
 deal 52?52 NB. deals a random deck
-wd^:(-.IFJ6) 'pshow;pshow sw_hide'
+wd 'pshow;pshow sw_hide'
 draw''
 wd 'pshow'
-evtloop^:(-.IFJ6)''
+evtloop''
 )
 
 solitaire_game_paint=: draw
