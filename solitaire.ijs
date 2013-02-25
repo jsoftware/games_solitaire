@@ -178,7 +178,7 @@ if. fexist PATHRECORD do.
     GameList=: GameList, <(>:(> a { FILE) i: ':') }. (- (#> a{ FILE ) - ((> a { FILE) i: ';')) }. > a { FILE
   end.
   if. NameList -: '' do.
-    wd 'mb "J Solitaire" "Sorry, there are no Old Games."'
+    wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
     wd 'psel used'
     wd 'pclose'
     return.
@@ -186,7 +186,7 @@ if. fexist PATHRECORD do.
   wd 'setfont name ',FIXFONT
   wd 'set name ', ,NameList
 else.
-  wd 'mb "J Solitaire" "Sorry, there are no Old Games."'
+  wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
   wd 'psel used'
   wd 'pclose'
   return.
@@ -240,7 +240,7 @@ if. fexist PATHRECORD do.
   end.
   for_b. i. #GameList do.
     if. WaitTilWon -: ". >b { GameList do.
-      wd 'mb "J Solitaire" "Congratulations on winning.  Unfortunately ',(> b { NameList),' has already won with this deck."'
+      wdifo 'J Solitaire';'Congratulations on winning.  Unfortunately ',(> b { NameList),' has already won with this deck.'
       FILE=. (<((- (#> b{ FILE ) - ((> b { FILE) i: ';')) }. > b { FILE),';',": 1 0 + ".(- <:(#> b{ FILE ) - ((> b { FILE) i: ';')) {. > b { FILE) b } FILE
       FILE=. (0 { 'b' fread PATHRECORD), FILE
       FILE=. ;FILE, each <LF
@@ -854,6 +854,6 @@ open PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0
-wd 'mb "Updates" *', WhatNew
+wdinfo 'Updates';WhatNew
 )
 solitaire_run''

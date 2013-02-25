@@ -29,7 +29,7 @@ if. fexist PATHRECORD do.
   end.
   for_b. i. #GameList do.
     if. WaitTilWon -: ". >b { GameList do.
-      wd 'mb "J Solitaire" "Congratulations on winning.  Unfortunately ',(> b { NameList),' has already won with this deck."'
+      wdifo 'J Solitaire';'Congratulations on winning.  Unfortunately ',(> b { NameList),' has already won with this deck.'
       FILE=. (<((- (#> b{ FILE ) - ((> b { FILE) i: ';')) }. > b { FILE),';',": 1 0 + ".(- <:(#> b{ FILE ) - ((> b { FILE) i: ';')) {. > b { FILE) b } FILE
       FILE=. (0 { 'b' fread PATHRECORD), FILE
       FILE=. ;FILE, each <LF

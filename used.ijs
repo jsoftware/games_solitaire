@@ -37,7 +37,7 @@ if. fexist PATHRECORD do.
     GameList=: GameList, <(>:(> a { FILE) i: ':') }. (- (#> a{ FILE ) - ((> a { FILE) i: ';')) }. > a { FILE
   end.
   if. NameList -: '' do.
-    wd 'mb "J Solitaire" "Sorry, there are no Old Games."'
+    wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
     wd 'psel used'
     wd 'pclose'
     return.
@@ -45,7 +45,7 @@ if. fexist PATHRECORD do.
   wd 'setfont name ',FIXFONT
   wd 'set name ', ,NameList
 else.
-  wd 'mb "J Solitaire" "Sorry, there are no Old Games."'
+  wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
   wd 'psel used'
   wd 'pclose'
   return.

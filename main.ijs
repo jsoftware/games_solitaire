@@ -679,7 +679,7 @@ open PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0
-wd 'mb "Updates" *', WhatNew
+wdinfo 'Updates';WhatNew
 )
 
 NB. Runs J Solitaire automaticly when the script is run
