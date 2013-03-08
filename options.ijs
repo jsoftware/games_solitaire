@@ -21,7 +21,7 @@ rem form end;
 )
 
 OPTIONSQT=: 0 : 0
-pc options nomax nomenu nomin nosize owner qtwd;pn "Options";
+pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
 xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
 bin h;
