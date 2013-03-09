@@ -6,11 +6,11 @@ NB. Creating the form
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 bin vhv;
-xywh 10 7 36 48;cc aboutpic isigraph;
+wh 72 96;cc aboutpic isigraph;
 bin sz;
-xywh 54 6 80 50;cc t static;
+cc t static;
 bin sz;
-xywh 54 60 30 12;cc ok button;cn "OK";
+cc ok button;cn "OK";
 bin z;
 pas 6 3;pcenter;
 rem form end;
@@ -24,14 +24,14 @@ wd 'psel about'
 NB. commands to prepare the isigraph to display deck card(ace of spades)
 wd 'setxywhx aboutpic 20 14 ',": cardWH
 wd 'pshow;pshow sw_hide'
-wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
+wd 'set t text *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
 
 NB. Closes the about form
 about_close=: 3 : 0
 wd 'psel about'
-wd'pclose'
+wd 'pclose'
 )
 
 NB. triggers the about_close'' verb

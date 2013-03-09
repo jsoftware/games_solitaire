@@ -8,11 +8,11 @@ open=: xedit
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 bin vhv;
-xywh 10 7 36 48;cc aboutpic isigraph;
+wh 72 96;cc aboutpic isigraph;
 bin sz;
-xywh 54 6 80 50;cc t static;
+cc t static;
 bin sz;
-xywh 54 60 30 12;cc ok button;cn "OK";
+cc ok button;cn "OK";
 bin z;
 pas 6 3;pcenter;
 rem form end;
@@ -22,12 +22,12 @@ wd ABOUT
 wd 'psel about'
 wd 'setxywhx aboutpic 20 14 ',": cardWH
 wd 'pshow;pshow sw_hide'
-wd'set t *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
+wd 'set t text *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
 about_close=: 3 : 0
 wd 'psel about'
-wd'pclose'
+wd 'pclose'
 )
 about_ok_button=: 3 : 0
 about_close''
@@ -39,56 +39,41 @@ glpixels 0 0, cardWH, ,3 { CARDS
 )
 OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
-xywh 14 17 36 48;cc back isigraph;
-xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
-xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
-xywh 183 156 49 12;cc ok button;cn "OK";
-xywh 141 76 33 12;cc numbox edit;
-xywh 72 18 160 55;cc ccstatic static;
-xywh 19 71 24 12;cc next spin;
-xywh 129 156 48 12;cc no button;cn "Cancel";
-xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
-xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
-xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
-pas 6 6;pcenter;
-rem form end;
-)
-
-OPTIONSQT=: 0 : 0
-pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
-xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
+groupbox "Card Back";
+wh 72 96;cc back isigraph;
+cc next button;
+bin s;
+groupboxend;
+bin zv;
+groupbox "Draw Number";
+cc ccstatic static;
+cc numbox edit;
+bin s;
+groupboxend;
+bin z;
+bin z;
+cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
+cc bandtxt static;cn "This Allows for Faster Graphics";
 bin h;
-xywh 14 17 36 48;cc back isigraph;
-bin szsh;
-xywh 19 71 24 12;cc next button;
-bin szzv;
-xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
-xywh 72 18 160 55;cc ccstatic static;
-bin h;
-xywh 141 76 33 12;cc numbox edit;
-bin szszz;
-xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
-xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
-bin h;
-xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
+cc bgc button;cn "Change Background Color";
 bin szhs;
-xywh 129 156 48 12;cc no button;cn "Cancel";
-xywh 183 156 49 12;cc ok button;cn "OK";
+cc no button;cn "Cancel";
+cc ok button;cn "OK";
 bin zz;
 pas 6 6;pcenter;
 rem form end;
 )
 options_run=: 3 : 0
-wd IFQT{::OPTIONS;OPTIONSQT
+wd OPTIONS
 backNUM=: 51 + CARDBACK
 wd 'pshow;pshow sw_hide'
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint''
-wd 'set numbox ',": NUMFLIP
-wd'set band ',":BAND
-wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+wd 'set numbox text ',": NUMFLIP
+wd 'set band value ',":BAND
+wd 'set ccstatic text *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
 wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
@@ -150,17 +135,17 @@ end.
 USED=: 0 : 0
 pc used nomax nomenu nomin nosize owner;pn "Winning Games";
 bin v;
-xywh 10 4 156 41;cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
+cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
 bin h;
-xywh 13 48 69 12;cc ccstatic static;cn "Winner's Name";
-xywh 93 48 69 12;cc s2 static ss_right;cn "Wins | Losses";
+cc ccstatic static;cn "Winner's Name";
+cc s2 static ss_right;cn "Wins | Losses";
 bin z;
-xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
+wh 312 370;cc name listbox;
 bin h;
-xywh 9 254 39 12;cc no button;cn "Cancel";
-xywh 51 254 92 12;cc play button;cn "Play The Game!";
+cc no button;cn "Cancel";
+cc play button;cn "Play The Game!";
 bin zz;
-xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
+wh 312 370;cc name listbox;
 pas 6 6;pcenter;
 rem form end;
 )
@@ -184,7 +169,7 @@ if. fexist PATHRECORD do.
     return.
   end.
   wd 'setfont name ',FIXFONT
-  wd 'set name ', ,NameList
+  wd 'set name text ', ,NameList
 else.
   wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
   wd 'psel used'
@@ -220,10 +205,10 @@ used_play_button''
 WIN=: 0 : 0
 pc win nomax nomenu nomin nosize owner;pn "Congratulations!";
 bin v;
-xywh 8 12 147 10;cc ccstatic static ss_center;cn "Congratulations! You've Won!";
-xywh 20 26 120 32;cc ccstatic static ss_center;cn "Please enter your name below so that you can be immortalized in the Solitaire Hall of Fame";
-xywh 8 60 147 12;cc name edit;
-xywh 8 78 147 11;cc submit button;cn "Submit";
+cc ccstatic static center;cn "Congratulations! You've Won!";
+cc ccstatic static center;cn "Please enter your name below so that you can be immortalized in the Solitaire Hall of Fame";
+cc name edit;
+cc submit button;cn "Submit";
 bin z;
 pas 6 6;pcenter;
 rem form end;
@@ -267,7 +252,7 @@ Info=. Info, name,':',(":WaitTilWon),';', '1 1', LF
 Info fwrite PATHRECORD
 
 
-wd 'set name ""'
+wd 'set name text ""'
 wd 'psel win'
 wd 'pclose'
 )

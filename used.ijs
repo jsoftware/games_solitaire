@@ -6,17 +6,17 @@ NB. Creating the form
 USED=: 0 : 0
 pc used nomax nomenu nomin nosize owner;pn "Winning Games";
 bin v;
-xywh 10 4 156 41;cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
+cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
 bin h;
-xywh 13 48 69 12;cc ccstatic static;cn "Winner's Name";
-xywh 93 48 69 12;cc s2 static ss_right;cn "Wins | Losses";
+cc ccstatic static;cn "Winner's Name";
+cc s2 static ss_right;cn "Wins | Losses";
 bin z;
-xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
+wh 312 370;cc name listbox;
 bin h;
-xywh 9 254 39 12;cc no button;cn "Cancel";
-xywh 51 254 92 12;cc play button;cn "Play The Game!";
+cc no button;cn "Cancel";
+cc play button;cn "Play The Game!";
 bin zz;
-xywh 9 63 156 185;cc name listbox ws_border ws_vscroll;
+wh 312 370;cc name listbox;
 pas 6 6;pcenter;
 rem form end;
 )
@@ -43,7 +43,7 @@ if. fexist PATHRECORD do.
     return.
   end.
   wd 'setfont name ',FIXFONT
-  wd 'set name ', ,NameList
+  wd 'set name text ', ,NameList
 else.
   wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
   wd 'psel used'

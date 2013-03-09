@@ -5,42 +5,27 @@ NB. This script creates and runs the options form
 NB. Creating the form
 OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
-xywh 14 17 36 48;cc back isigraph;
-xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
-xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
-xywh 183 156 49 12;cc ok button;cn "OK";
-xywh 141 76 33 12;cc numbox edit;
-xywh 72 18 160 55;cc ccstatic static;
-xywh 19 71 24 12;cc next spin;
-xywh 129 156 48 12;cc no button;cn "Cancel";
-xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
-xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
-xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
-pas 6 6;pcenter;
-rem form end;
-)
-
-OPTIONSQT=: 0 : 0
-pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
-xywh 5 6 54 86;cc ccgroupbox groupbox;cn "Card Back";
+groupbox "Card Back";
+wh 72 96;cc back isigraph;
+cc next button;
+bin s;
+groupboxend;
+bin zv;
+groupbox "Draw Number";
+cc ccstatic static;
+cc numbox edit;
+bin s;
+groupboxend;
+bin z;
+bin z;
+cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
+cc bandtxt static;cn "This Allows for Faster Graphics";
 bin h;
-xywh 14 17 36 48;cc back isigraph;
-bin szsh;
-xywh 19 71 24 12;cc next button;
-bin szzv;
-xywh 68 6 170 86;cc ccgroupbox groupbox;cn "Draw Number";
-xywh 72 18 160 55;cc ccstatic static;
-bin h;
-xywh 141 76 33 12;cc numbox edit;
-bin szszz;
-xywh 11 103 130 14;cc band checkbox;cn "Draw Lines (Instead of the Cards) While Dragging";
-xywh 19 117 134 14;cc bandtxt static;cn "This Allows for Faster Graphics";
-bin h;
-xywh 10 131 114 12;cc bgc button;cn "Change Background Color";
+cc bgc button;cn "Change Background Color";
 bin szhs;
-xywh 129 156 48 12;cc no button;cn "Cancel";
-xywh 183 156 49 12;cc ok button;cn "OK";
+cc no button;cn "Cancel";
+cc ok button;cn "OK";
 bin zz;
 pas 6 6;pcenter;
 rem form end;
@@ -48,16 +33,16 @@ rem form end;
 
 NB. running the form and setting up the isigraph and numbox
 options_run=: 3 : 0
-wd IFQT{::OPTIONS;OPTIONSQT
+wd OPTIONS
 NB. initialize form here
 backNUM=: 51 + CARDBACK
 wd 'pshow;pshow sw_hide'
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
 glpaint''
-wd 'set numbox ',": NUMFLIP
-wd'set band ',":BAND
-wd'set ccstatic *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
+wd 'set numbox text ',": NUMFLIP
+wd 'set band value ',":BAND
+wd 'set ccstatic text *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
 wd 'pshow;'
 tempBGCOLOR=: BGCOLOR
 )
