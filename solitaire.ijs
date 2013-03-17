@@ -1,10 +1,7 @@
-require 'gl2 files strings'
-require^:(-.IFJ6) ::0: 'gtkwd'
+require 'gl2'
 
 coclass 'solitaire'
 coinsert 'jgl2'
-
-open=: xedit
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 bin vhv;
