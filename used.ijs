@@ -16,7 +16,6 @@ bin h;
 cc no button;cn "Cancel";
 cc play button;cn "Play The Game!";
 bin zz;
-wh 312 370;cc name listbox;
 pas 6 6;pcenter;
 rem form end;
 )
@@ -43,7 +42,7 @@ if. fexist PATHRECORD do.
     return.
   end.
   wd 'setfont name ',FIXFONT
-  wd 'set name text ', ,NameList
+  wd 'set name items ', ,NameList
 else.
   wdinfo 'J Solitaire';'Sorry, there are no Old Games.'
   wd 'psel used'
