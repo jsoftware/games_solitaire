@@ -398,7 +398,7 @@ menu whtnw "&What's New" "" "" "";
 menusep;
 menu about "&About" "" "" "";
 menupopz;
-xywh 0 0 323 270;cc game isigraph rightmove bottommove;
+wh 646 540;cc game isigraph;
 pas 0 0;pcenter;
 rem form end;
 )

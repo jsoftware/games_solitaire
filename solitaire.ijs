@@ -17,7 +17,7 @@ rem form end;
 about_run=: 3 : 0
 wd ABOUT
 wd 'psel about'
-wd 'setxywhx aboutpic 20 14 ',": cardWH
+wd 'set aboutpic wh ',": cardWH
 wd 'pshow;pshow sw_hide'
 wd 'set t text *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
@@ -594,7 +594,7 @@ menu whtnw "&What's New" "" "" "";
 menusep;
 menu about "&About" "" "" "";
 menupopz;
-xywh 0 0 323 270;cc game isigraph rightmove bottommove;
+wh 646 540;cc game isigraph;
 pas 0 0;pcenter;
 rem form end;
 )
