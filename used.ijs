@@ -11,7 +11,7 @@ bin h;
 cc ccstatic static;cn "Winner's Name";
 cc s2 static ss_right;cn "Wins | Losses";
 bin z;
-wh 312 370;cc name listbox;
+minwh 312 370;cc name listbox;
 bin h;
 cc no button;cn "Cancel";
 cc play button;cn "Play The Game!";

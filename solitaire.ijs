@@ -5,7 +5,7 @@ coinsert 'jgl2'
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 bin vhv;
-wh 72 96;cc aboutpic isigraph;
+minwh 72 96;cc aboutpic isigraph;
 bin sz;
 cc t static;
 bin sz;
@@ -38,7 +38,7 @@ OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
 groupbox "Card Back";
-wh 72 96;cc back isigraph;
+minwh 72 96;cc back isigraph;
 cc next button;
 bin s;
 groupboxend;
@@ -137,7 +137,7 @@ bin h;
 cc ccstatic static;cn "Winner's Name";
 cc s2 static ss_right;cn "Wins | Losses";
 bin z;
-wh 312 370;cc name listbox;
+minwh 312 370;cc name listbox;
 bin h;
 cc no button;cn "Cancel";
 cc play button;cn "Play The Game!";
@@ -594,7 +594,7 @@ menu whtnw "&What's New" "" "" "";
 menusep;
 menu about "&About" "" "" "";
 menupopz;
-wh 646 540;cc game isigraph;
+minwh 646 540;cc game isigraph;
 pas 0 0;pcenter;
 rem form end;
 )

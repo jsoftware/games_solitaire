@@ -7,7 +7,7 @@ OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
 groupbox "Card Back";
-wh 72 96;cc back isigraph;
+minwh 72 96;cc back isigraph;
 cc next button;
 bin s;
 groupboxend;
