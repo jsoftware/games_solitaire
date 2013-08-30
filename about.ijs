@@ -6,7 +6,7 @@ NB. Creating the form
 ABOUT=: 0 : 0
 pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
 bin vhv;
-minwh 72 96;cc aboutpic isigraph;
+minwh 72 96;cc aboutpic isigraph flush;
 bin sz;
 cc t static;
 bin sz;
