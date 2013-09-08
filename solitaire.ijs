@@ -64,14 +64,10 @@ rem form end;
 options_run=: 3 : 0
 wd OPTIONS
 backNUM=: 51 + CARDBACK
-wd 'pshow;pshow sw_hide'
-glclear''
-glpixels 0 0, cardWH, ,backNUM { CARDS
-glpaint''
 wd 'set numbox text ',": NUMFLIP
 wd 'set band value ',":BAND
 wd 'set ccstatic text *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
-wd 'pshow;'
+wd 'pshow'
 tempBGCOLOR=: BGCOLOR
 )
 options_close=: 3 : 0
@@ -89,7 +85,7 @@ glsel 'back'
 glclear''
 
 glpixels 0 0, cardWH, ,backNUM { CARDS
-glpaint ''
+glpaint''
 )
 
 options_back_paint=: 3 : 0
