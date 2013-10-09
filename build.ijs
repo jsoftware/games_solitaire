@@ -3,7 +3,7 @@ NB. build
 writesourcex_jp_ '~Addons/games/solitaire';'~Addons/games/solitaire/solitaire.ijs'
 
 f=. 3 : 0
-(jpath '~addons/games/solitaire/',y) fcopynew jpath '~Addons/games/solitaire/',y
+(jpath '~addons/games/solitaire/',y) (fcopynew ::0:) jpath '~Addons/games/solitaire/',y
 )
 
 mkdir_j_ jpath '~addons/games/solitaire'
