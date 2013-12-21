@@ -18,7 +18,6 @@ about_run=: 3 : 0
 wd ABOUT
 wd 'psel about'
 wd 'set aboutpic wh ',": cardWH
-wd 'pshow;pshow sw_hide'
 wd 'set t text *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
@@ -812,23 +811,23 @@ solitaire_options_button=: 3 : 0
 options_run''
 )
 solitaire_vm_button=: 3 : 0
-open PATH,'/main.ijs'
+open`xedit@.('Android'-:UNAME) PATH,'/main.ijs'
 )
 solitaire_vu_button=: 3 : 0
-open PATH,'/used.ijs'
+open`xedit@.('Android'-:UNAME) PATH,'/used.ijs'
 )
 solitaire_vw_button=: 3 : 0
-open PATH,'/win.ijs'
+open`xedit@.('Android'-:UNAME) PATH,'/win.ijs'
 )
 solitaire_vo_button=: 3 : 0
-open PATH,'/options.ijs'
+open`xedit@.('Android'-:UNAME) PATH,'/options.ijs'
 )
 solitaire_va_button=: 3 : 0
-open PATH,'/about.ijs'
+open`xedit@.('Android'-:UNAME) PATH,'/about.ijs'
 )
 
 solitaire_vr_button=: 3 : 0
-open PATH,'/record.txt'
+open`xedit@.('Android'-:UNAME) PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0

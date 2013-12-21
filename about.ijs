@@ -23,7 +23,6 @@ NB. initialize form here
 wd 'psel about'
 NB. commands to prepare the isigraph to display deck card(ace of spades)
 wd 'set aboutpic wh ',": cardWH
-wd 'pshow;pshow sw_hide'
 wd 'set t text *J Solitaire',LF,LF,'Version 3.0 - August 2004',LF,LF,LF,LF,'Created by: Ken Cramer'
 wd 'pshow;'
 )
