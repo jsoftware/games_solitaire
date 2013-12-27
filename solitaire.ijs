@@ -811,23 +811,23 @@ solitaire_options_button=: 3 : 0
 options_run''
 )
 solitaire_vm_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/main.ijs'
+open PATH,'/main.ijs'
 )
 solitaire_vu_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/used.ijs'
+open PATH,'/used.ijs'
 )
 solitaire_vw_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/win.ijs'
+open PATH,'/win.ijs'
 )
 solitaire_vo_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/options.ijs'
+open PATH,'/options.ijs'
 )
 solitaire_va_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/about.ijs'
+open PATH,'/about.ijs'
 )
 
 solitaire_vr_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/record.txt'
+open PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0

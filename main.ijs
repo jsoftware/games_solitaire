@@ -652,31 +652,31 @@ options_run''
 
 NB. Opens the Main.ijs file so users can view and edit the code
 solitaire_vm_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/main.ijs'
+open PATH,'/main.ijs'
 )
 
 NB. Opens the Used.ijs file so users can view and edit the code
 solitaire_vu_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/used.ijs'
+open PATH,'/used.ijs'
 )
 
 NB. Opens the Win.ijs file so users can view and edit the code
 solitaire_vw_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/win.ijs'
+open PATH,'/win.ijs'
 )
 
 NB. Opens the Options.ijs file so users can view and edit the code
 solitaire_vo_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/options.ijs'
+open PATH,'/options.ijs'
 )
 
 NB. Opens the About.ijs file so users can view and edit the code
 solitaire_va_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/about.ijs'
+open PATH,'/about.ijs'
 )
 
 solitaire_vr_button=: 3 : 0
-open`xedit@.('Android'-:UNAME) PATH,'/record.txt'
+open PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0
