@@ -100,7 +100,7 @@ wd 'pclose'
 
 NB. This verb allows the user to launch a color picker to chose the background
 options_bgc_button=: 3 : 0
-tempBGCOLOR=: wd 'mbcolor'
+tempBGCOLOR=: wd 'mb color'
 if. 1 > # tempBGCOLOR do.
   tempBGCOLOR=: BGCOLOR
 else.
