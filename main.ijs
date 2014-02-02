@@ -447,7 +447,6 @@ deal 52?52 NB. deals a random deck
 wd 'pshow;pshow sw_hide'
 draw''
 wd 'pshow'
-evtloop''
 )
 
 solitaire_game_paint=: draw

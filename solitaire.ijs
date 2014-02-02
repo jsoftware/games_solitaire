@@ -632,7 +632,6 @@ deal 52?52
 wd 'pshow;pshow sw_hide'
 draw''
 wd 'pshow'
-evtloop''
 )
 
 solitaire_game_paint=: draw
