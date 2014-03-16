@@ -651,31 +651,31 @@ options_run''
 
 NB. Opens the Main.ijs file so users can view and edit the code
 solitaire_vm_button=: 3 : 0
-open PATH,'/main.ijs'
+textview 'main'; 1!:1 < PATH,'/main.ijs'
 )
 
 NB. Opens the Used.ijs file so users can view and edit the code
 solitaire_vu_button=: 3 : 0
-open PATH,'/used.ijs'
+textview 'used'; 1!:1 < PATH,'/used.ijs'
 )
 
 NB. Opens the Win.ijs file so users can view and edit the code
 solitaire_vw_button=: 3 : 0
-open PATH,'/win.ijs'
+textview 'win'; 1!:1 < PATH,'/win.ijs'
 )
 
 NB. Opens the Options.ijs file so users can view and edit the code
 solitaire_vo_button=: 3 : 0
-open PATH,'/options.ijs'
+textview 'options'; 1!:1 < PATH,'/options.ijs'
 )
 
 NB. Opens the About.ijs file so users can view and edit the code
 solitaire_va_button=: 3 : 0
-open PATH,'/about.ijs'
+textview 'about'; 1!:1 < PATH,'/about.ijs'
 )
 
 solitaire_vr_button=: 3 : 0
-open PATH,'/record.txt'
+textview 'record'; 1!:1 < PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0

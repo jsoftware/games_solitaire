@@ -810,23 +810,23 @@ solitaire_options_button=: 3 : 0
 options_run''
 )
 solitaire_vm_button=: 3 : 0
-open PATH,'/main.ijs'
+textview 'main'; 1!:1 < PATH,'/main.ijs'
 )
 solitaire_vu_button=: 3 : 0
-open PATH,'/used.ijs'
+textview 'used'; 1!:1 < PATH,'/used.ijs'
 )
 solitaire_vw_button=: 3 : 0
-open PATH,'/win.ijs'
+textview 'win'; 1!:1 < PATH,'/win.ijs'
 )
 solitaire_vo_button=: 3 : 0
-open PATH,'/options.ijs'
+textview 'options'; 1!:1 < PATH,'/options.ijs'
 )
 solitaire_va_button=: 3 : 0
-open PATH,'/about.ijs'
+textview 'about'; 1!:1 < PATH,'/about.ijs'
 )
 
 solitaire_vr_button=: 3 : 0
-open PATH,'/record.txt'
+textview 'record'; 1!:1 < PATH,'/record.txt'
 )
 
 solitaire_whtnw_button=: 3 : 0

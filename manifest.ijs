@@ -6,7 +6,7 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.28'
+VERSION=: '1.0.29'
 
 RELEASE=: 'j801'
 
