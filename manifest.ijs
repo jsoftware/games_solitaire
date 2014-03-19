@@ -6,9 +6,13 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.29'
+VERSION=: '1.0.30'
 
 RELEASE=: 'j801'
+
+DEPENDS=: 0 : 0
+graphics/gl2
+)
 
 FILES=: 0 : 0
 solitaire.ijs
