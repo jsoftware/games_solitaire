@@ -26,3 +26,4 @@ used.ijs
 win.ijs
 )
 
+PLATFORMS=: 'linux win darwin android'
