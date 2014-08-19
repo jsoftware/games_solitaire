@@ -19,7 +19,7 @@ NUMtoFLIP=: NUMFLIP NB. Numflip is the number of cards flipped when the deck is 
 WaitTilWon=: y NB. WaitTilWon stores the deal so you can record your winning game and let other people play
 )
 
-NB. Clears the isigraph and draws the board for solitaire
+NB. Clears the isidraw and draws the board for solitaire
 drawinit=: 3 : 0
 NB. wd 'psel solitaire'
 glcmds DRAWINIT
@@ -398,7 +398,7 @@ menu whtnw "&What's New" "" "" "";
 menusep;
 menu about "&About" "" "" "";
 menupopz;
-minwh 646 540;cc game isigraph flush;
+minwh 646 540;cc game isidraw flush;
 pas 0 0;pcenter;
 rem form end;
 )

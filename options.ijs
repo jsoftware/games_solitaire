@@ -7,7 +7,7 @@ OPTIONS=: 0 : 0
 pc options nomax nomenu nomin nosize owner;pn "Options";
 bin vhv;
 groupbox "Card Back";
-minwh 72 96;cc back isigraph flush;
+minwh 72 96;cc back isidraw flush;
 cc next button;
 bin s;
 groupboxend;
@@ -31,7 +31,7 @@ pas 6 6;pcenter;
 rem form end;
 )
 
-NB. running the form and setting up the isigraph and numbox
+NB. running the form and setting up the isidsraw and numbox
 options_run=: 3 : 0
 wd OPTIONS
 NB. initialize form here
@@ -41,6 +41,7 @@ wd 'set band value ',":BAND
 wd 'set ccstatic text *Please enter the number of cards you want to flip each time the deck is clicked. Solitaire is usually played with 1 or 3 cards being turned over each time. However, for this version you can choose any number less than 6.'
 wd 'pshow'
 tempBGCOLOR=: BGCOLOR
+options_back_paint''
 )
 
 NB. This verb closes the options form
