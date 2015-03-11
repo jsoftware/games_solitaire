@@ -4,7 +4,7 @@ NB. This script creates a form to allow the user to choose an old game
 
 NB. Creating the form
 USED=: 0 : 0
-pc used nomax nomenu nomin nosize owner;pn "Winning Games";
+pc used nosize owner;pn "Winning Games";
 bin v;
 cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
 bin h;

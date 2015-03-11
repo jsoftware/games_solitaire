@@ -3,7 +3,7 @@ require 'gl2'
 coclass 'solitaire'
 coinsert 'jgl2'
 ABOUT=: 0 : 0
-pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
+pc about nosize owner;pn "About Solitaire";
 bin vhv;
 minwh 72 96;cc aboutpic isigraph flush;
 bin sz;
@@ -34,7 +34,7 @@ glpixels 0 0, cardWH, ,3 { CARDS
 0
 )
 OPTIONS=: 0 : 0
-pc options nomax nomenu nomin nosize owner;pn "Options";
+pc options nosize owner;pn "Options";
 bin vhv;
 groupbox "Card Back";
 minwh 72 96;cc back isidraw flush;
@@ -126,7 +126,7 @@ else.
 end.
 )
 USED=: 0 : 0
-pc used nomax nomenu nomin nosize owner;pn "Winning Games";
+pc used nosize owner;pn "Winning Games";
 bin v;
 cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
 bin h;
@@ -195,7 +195,7 @@ used_name_button=: 3 : 0
 used_play_button''
 )
 WIN=: 0 : 0
-pc win nomax nomenu nomin nosize owner;pn "Congratulations!";
+pc win nosize owner;pn "Congratulations!";
 bin v;
 cc ccstatic static center;cn "Congratulations! You've Won!";
 cc ccstatic static center;cn "Please enter your name below so that you can be immortalized in the Solitaire Hall of Fame";
@@ -630,7 +630,7 @@ xy=. 2 3{wdqscreen''
 DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 4 * cardSPACE), cardDOWN),cardWH, 6 2031 ,((cardOVER + 5 * cardSPACE), cardDOWN), cardWH, 6 2031 ,((cardOVER + 6 * cardSPACE), cardDOWN),cardWH
 9!:1 >.*:+/6!:0''
 deal 52?52
-wd 'pshow;pshow sw_hide'
+wd 'pshow hide'
 draw''
 wd 'pshow'
 )

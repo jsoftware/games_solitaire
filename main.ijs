@@ -444,7 +444,7 @@ DRAWINIT=: 2 2007 5 2032, BGCOLOR, 2 2004, 6 2031 0 0,xy,6 2031 ,((cardOVER + 3 
 NB. (((cardOVER + 3 * cardSPACE), cardDOWN) + b * cardSPACE, 0 )
 9!:1 >.*:+/6!:0'' NB. random seed
 deal 52?52 NB. deals a random deck
-wd 'pshow;pshow sw_hide'
+wd 'pshow hide'
 draw''
 wd 'pshow'
 )

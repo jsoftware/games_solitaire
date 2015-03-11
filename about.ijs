@@ -4,7 +4,7 @@ NB. This loads the about form.
 
 NB. Creating the form
 ABOUT=: 0 : 0
-pc about nomax nomenu nomin nosize owner;pn "About Solitaire";
+pc about nosize owner;pn "About Solitaire";
 bin vhv;
 minwh 72 96;cc aboutpic isigraph flush;
 bin sz;

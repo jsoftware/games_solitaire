@@ -4,7 +4,7 @@ NB. This script creates and runs the options form
 
 NB. Creating the form
 OPTIONS=: 0 : 0
-pc options nomax nomenu nomin nosize owner;pn "Options";
+pc options nosize owner;pn "Options";
 bin vhv;
 groupbox "Card Back";
 minwh 72 96;cc back isidraw flush;
