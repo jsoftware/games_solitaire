@@ -248,6 +248,7 @@ wd 'set name text ""'
 wd 'psel win'
 wd 'pclose'
 )
+onCreate=: solitaire_run
 suit=: 4 & |
 card=: <. @ % & 4
 deal=: 3 : 0
@@ -594,8 +595,31 @@ minwh 646 540;cc game isidraw flush;
 pas 0 0;pcenter;
 rem form end;
 )
+
+SOLITAIREJA=: 0 : 0
+pc solitaire;pn "J Solitaire";
+menupop "&File";
+menu deal "&Deal" "" "" "";
+menu restart "&Restart" "" "" "";
+menusep;
+menu quit "&Exit" "" "" "";
+menupopz;
+menupop "&Code";
+menu vm "&Main.ijs" "" "" "";
+menu vu "&Used.ijs" "" "" "";
+menu vw "&Win.ijs" "" "" "";
+menu vo "&Options.ijs" "" "" "";
+menu vr "&Record.txt" "" "" "";
+menupopz;
+menupop "&Help";
+menu whtnw "&What's New" "" "" "";
+menupopz;
+wh _1 _1;cc game isidraw flush;
+pas 0 0;pcenter;
+rem form end;
+)
 solitaire_run=: 3 : 0
-wd SOLITAIRE
+wd IFJA{::SOLITAIRE;SOLITAIREJA
 PATH=: jpath '~addons/games/solitaire'
 PATHRECORD=: jpath PATH,'/record.txt'
 if. fexist PATHRECORD do.
@@ -634,6 +658,7 @@ wd 'pshow hide'
 draw''
 wd 'pshow'
 )
+solitaire_game_resize=: draw
 
 solitaire_game_paint=: draw
 
@@ -833,4 +858,4 @@ textview 'record'; 1!:1 < PATH,'/record.txt'
 solitaire_whtnw_button=: 3 : 0
 wdinfo 'Updates';WhatNew
 )
-solitaire_run''
+solitaire_run`wd@.IFJA 'activity ', >coname''

@@ -6,9 +6,9 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.37'
+VERSION=: '1.0.38'
 
-RELEASE=: ' j803 j804'
+RELEASE=: 'j804'
 
 DEPENDS=: 0 : 0
 graphics/gl2

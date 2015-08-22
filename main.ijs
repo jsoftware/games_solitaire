@@ -3,6 +3,8 @@ NB. This is the main script for J Solitaire.
 NB. This script creates the gamboard and runs the game
 NB. Functions are defined before the form is created and the constants are set when the form is run.
 
+onCreate=: solitaire_run
+
 NB. Cards are the numbers 0 - 51 -> These two functions return the card suit and the number (Ace to King not 0-51).
 suit=: 4 & |
 card=: <. @ % & 4
@@ -403,11 +405,34 @@ pas 0 0;pcenter;
 rem form end;
 )
 
+SOLITAIREJA=: 0 : 0
+pc solitaire;pn "J Solitaire";
+menupop "&File";
+menu deal "&Deal" "" "" "";
+menu restart "&Restart" "" "" "";
+menusep;
+menu quit "&Exit" "" "" "";
+menupopz;
+menupop "&Code";
+menu vm "&Main.ijs" "" "" "";
+menu vu "&Used.ijs" "" "" "";
+menu vw "&Win.ijs" "" "" "";
+menu vo "&Options.ijs" "" "" "";
+menu vr "&Record.txt" "" "" "";
+menupopz;
+menupop "&Help";
+menu whtnw "&What's New" "" "" "";
+menupopz;
+wh _1 _1;cc game isidraw flush;
+pas 0 0;pcenter;
+rem form end;
+)
+
 NB. menu rules "&Help" "" "" "";
 NB. menusep;
 
 solitaire_run=: 3 : 0
-wd SOLITAIRE
+wd IFJA{::SOLITAIRE;SOLITAIREJA
 NB. initialize form here
 PATH=: jpath '~addons/games/solitaire'
 PATHRECORD=: jpath PATH,'/record.txt'
@@ -448,6 +473,9 @@ wd 'pshow hide'
 draw''
 wd 'pshow'
 )
+
+NB. jandroid
+solitaire_game_resize=: draw
 
 solitaire_game_paint=: draw
 
@@ -683,4 +711,4 @@ wdinfo 'Updates';WhatNew
 )
 
 NB. Runs J Solitaire automaticly when the script is run
-solitaire_run''
+solitaire_run`wd@.IFJA 'activity ', >coname''
