@@ -9,7 +9,7 @@ bin v;
 cc ccstatic static;cn "The list below are games which have been won. Please select a game from the list if you would like to play a game that can be won.";
 bin h;
 cc ccstatic static;cn "Winner's Name";
-cc s2 static ss_right;cn "Wins | Losses";
+cc s2 static right;cn "Wins | Losses";
 bin z;
 minwh 312 370;cc name listbox;
 bin h;
