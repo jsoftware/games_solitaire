@@ -3,7 +3,7 @@ NB. This is the main script for J Solitaire.
 NB. This script creates the gamboard and runs the game
 NB. Functions are defined before the form is created and the constants are set when the form is run.
 
-onCreate=: solitaire_run
+onStart=: solitaire_run
 
 NB. Cards are the numbers 0 - 51 -> These two functions return the card suit and the number (Ace to King not 0-51).
 suit=: 4 & |

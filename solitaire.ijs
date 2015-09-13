@@ -248,7 +248,7 @@ wd 'set name text ""'
 wd 'psel win'
 wd 'pclose'
 )
-onCreate=: solitaire_run
+onStart=: solitaire_run
 suit=: 4 & |
 card=: <. @ % & 4
 deal=: 3 : 0
