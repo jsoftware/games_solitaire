@@ -6,7 +6,7 @@ DESCRIPTION=: 0 : 0
 solitaire
 )
 
-VERSION=: '1.0.40'
+VERSION=: '1.0.41'
 
 RELEASE=: 'j804'
 

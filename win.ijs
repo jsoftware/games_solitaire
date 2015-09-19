@@ -64,4 +64,3 @@ wd 'set name text ""'
 wd 'psel win'
 wd 'pclose'
 )
-
