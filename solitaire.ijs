@@ -31,6 +31,7 @@ about_close''
 
 about_aboutpic_paint=: 3 : 0
 glpixels 0 0, cardWH, ,3 { CARDS
+glpaint^:IFJA ''
 0
 )
 OPTIONS=: 0 : 0
