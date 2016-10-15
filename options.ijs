@@ -66,8 +66,10 @@ glpaint''
 )
 
 options_back_paint=: 3 : 0
+glmark^:IFJA ''
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
+glpaints^:IFJA ''
 )
 
 NB. This verb is tied to the ok control and checks to see if the data entered is valid; if so it updates the data.
