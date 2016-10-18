@@ -32,7 +32,7 @@ about_close''
 about_aboutpic_paint=: 3 : 0
 glmark^:IFJA ''
 glpixels 0 0, cardWH, ,3 { CARDS
-glpaints^:IFJA ''
+glcmds@gltrash^:IFJA ''
 0
 )
 OPTIONS=: 0 : 0
@@ -94,7 +94,7 @@ options_back_paint=: 3 : 0
 glmark^:IFJA ''
 glclear''
 glpixels 0 0, cardWH, ,backNUM { CARDS
-glpaints^:IFJA ''
+glcmds@gltrash^:IFJA ''
 )
 options_ok_button=: 3 : 0
 if. (5 >: ". numbox) *. (1<: ". numbox) *. (". numbox) = <. ". numbox do.
