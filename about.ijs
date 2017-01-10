@@ -39,8 +39,7 @@ about_close''
 )
 
 about_aboutpic_paint=: 3 : 0
-glmark^:IFJA ''
 glpixels 0 0, cardWH, ,3 { CARDS NB. Display card
-glcmds@gltrash^:IFJA ''
+glpaintx^:IFJA ''   NB. asyncj
 0
 )
